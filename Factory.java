@@ -1,5 +1,5 @@
 public class Factory {
-   Shop shop;
+    Shop shop;
     private static int carLimit = 10;
     private static int timeProduction = 2000;
 
@@ -7,7 +7,7 @@ public class Factory {
         this.shop = shop;
     }
 
-    public synchronized void productions (){
+    public void productions (){
         for(int i=1; i<=carLimit; i++){
             try {
                 Thread.sleep(timeProduction);
@@ -23,3 +23,5 @@ public class Factory {
         return carLimit;
     }
 }
+
+

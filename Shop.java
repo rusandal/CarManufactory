@@ -9,22 +9,22 @@ public class Shop {
     public void buyCar() {
         while (buyCountCars <= Factory.getCarLimit()) {
             synchronized (this) {
-                    while (allCarFromFactory.isEmpty() & buyCountCars < Factory.getCarLimit()) {
-                        System.out.println(Thread.currentThread().getName() + " зашел в автосалон");
-                        System.out.println("Машин нет");
-                        try {
-                            wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                while (allCarFromFactory.isEmpty() & buyCountCars < Factory.getCarLimit()) {
+                    System.out.println(Thread.currentThread().getName() + " зашел в автосалон");
+                    System.out.println("Машин нет");
+                    try {
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
-                    if (buyCountCars == Factory.getCarLimit()) {
-                        System.out.println("Машин не будет, завод остановился");
-                        break;
-                    }
-                    System.out.println(Thread.currentThread().getName() + " уехал на новеньком авто");
-                    allCarFromFactory.remove(0);
-                    buyCountCars++;
+                }
+                if (buyCountCars == Factory.getCarLimit()) {
+                    System.out.println("Машин не будет, завод остановился");
+                    break;
+                }
+                System.out.println(Thread.currentThread().getName() + " уехал на новеньком авто");
+                allCarFromFactory.remove(0);
+                buyCountCars++;
             }
             try {
                 Thread.sleep(buyerSleep);
