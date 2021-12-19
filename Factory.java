@@ -1,7 +1,7 @@
 public class Factory {
     Shop shop;
-    private static int carLimit = 10;
-    private static int timeProduction = 2000;
+    private static final int carLimit = 10;
+    private static final int timeProduction = 2000;
 
     public Factory(Shop shop) {
         this.shop = shop;
