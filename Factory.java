@@ -1,16 +1,16 @@
 public class Factory {
     Shop shop;
-    private static final int carLimit = 10;
-    private static final int timeProduction = 2000;
+    private static final int CAR_LIMIT = 10;
+    private static final int TIME_PRODUCTION = 2000;
 
     public Factory(Shop shop) {
         this.shop = shop;
     }
 
     public void productions (){
-        for(int i=1; i<=carLimit; i++){
+        for(int i=1; i<=CAR_LIMIT; i++){
             try {
-                Thread.sleep(timeProduction);
+                Thread.sleep(TIME_PRODUCTION);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -20,7 +20,7 @@ public class Factory {
     }
 
     public static int getCarLimit() {
-        return carLimit;
+        return CAR_LIMIT;
     }
 }
 

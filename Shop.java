@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Shop {
-    private static final int timeSleepBuyer = 5000;
+    private static final int TIME_SLEEP_BUYER = 5000;
     protected static List<Car> allCarFromFactory = new ArrayList<>();
     private static int buyCountCars = 0;
 
@@ -27,7 +27,7 @@ public class Shop {
                 buyCountCars++;
             }
             try {
-                Thread.sleep(timeSleepBuyer);
+                Thread.sleep(TIME_SLEEP_BUYER);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
